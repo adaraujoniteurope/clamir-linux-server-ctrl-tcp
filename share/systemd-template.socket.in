@@ -1,0 +1,10 @@
+[Unit]
+Description=@CMAKE_PROJECT_NAME@ SystemD Activated Socket
+PartOf=@CMAKE_PROJECT_NAME@.service
+
+[Socket]
+ListenStream=@NIT_CLAMIR_DEFAULT_TCP_LISTEN_HOST@:@NIT_CLAMIR_DEFAULT_TCP_LISTEN_PORT@
+Accept=yes
+
+[Install]
+WantedBy=sockets.target

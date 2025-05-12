@@ -1,0 +1,14 @@
+[Unit]
+Description=Foo Service
+After=network.target @CMAKE_PROJECT_NAME@.socket
+Requires=@CMAKE_PROJECT_NAME@.socket
+
+[Service]
+Type=simple
+ExecStart=@CMAKE_INSTALL_PREFIX@/bin/@CMAKE_PROJECT_NAME@
+StandardOutput=socket
+StandardError=socket
+TimeoutStopSec=5
+
+[Install]
+WantedBy=default.target
